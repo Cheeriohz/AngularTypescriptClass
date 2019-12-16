@@ -24,3 +24,6 @@ Module
     An angular application is defined as a Module
     A module is a collection of other modules components, pipes, and services
 Every object used in the application must be known to the application module
+
+Angular is a framework for building web applications.
+Applications consist primarily of a heirarchy of components that are grouped into modules.
