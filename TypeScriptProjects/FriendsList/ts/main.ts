@@ -9,5 +9,5 @@ friends.push(new Friend({name: "Beatrice", age: 31, email: "wife@gmail.com", bff
 
 console.log("Name \t\t Age \t Email \t\t BFF");
 friends.forEach(friend => { 
-    friend.print();  
+    friend.print(); 
 });
