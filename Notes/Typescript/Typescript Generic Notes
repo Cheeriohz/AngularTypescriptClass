@@ -1,0 +1,19 @@
+Components
+    Imports of other classes
+    A single decorator (always prefaced with an @)
+    An exported class
+Typescript is a superset of JavaScript
+Advantages:
+    Provide stronger type checking in dev mode for:
+        Properties(variables)
+        Method Parameters
+        Method Return Values
+    Is transpiled (compiled) into JavaScript
+
+Installation of Typescript 
+    npm init -y
+    npm install typescript -g
+    
+Initialization of Typescript
+    tsc --init
+    

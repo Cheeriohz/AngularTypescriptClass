@@ -19,3 +19,8 @@ Angular 1x vs 2x
     Angular is a component based framework. compnents are completely self-contained units that 
     control a portion of the web page. Components are organized intoa  tree-like structure with 
     a  root component and all other components branching from the root or from other components.
+
+Module
+    An angular application is defined as a Module
+    A module is a collection of other modules components, pipes, and services
+Every object used in the application must be known to the application module
