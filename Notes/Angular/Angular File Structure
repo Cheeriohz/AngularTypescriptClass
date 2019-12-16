@@ -1,0 +1,24 @@
+Importing Classes
+-----------------
+    All files in Angular contain a class that has been exported.
+    To use one class in another class, the class must be imported which references:
+        The file containing the class.
+        The classname itself (in curly braces)
+    File path is relative to the path of the current file
+
+Decorators
+----------
+    Decorators provide meta-data about the object
+    All decorators begin with an at sign (@)
+    The decorator defines the object type
+    Most decorators take parameters, but unused parameters need not be specified
+    Decorators take a JSON object as a parameters
+    Never add a semicolon at the end of a decorator 
+
+    (Example)
+    @Component({
+        selector: "abc-comp",
+        templateUrl: "./abc.component.html",
+        styleUrls: []
+    })
+    export class AbcComponent{ .. }
