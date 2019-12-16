@@ -1,0 +1,26 @@
+A module is an object in Angular that groups logically connected components, services, and other modules.
+All UI objects must belong to a module.
+All Applications have a root module.
+All modules are marked with @NgModule decorator with data:
+    declarations: component class names
+    imports: module class names
+    providers: service class names
+    bootstrap: startup component
+
+
+Reference
+---------
+    @NgModule
+
+    import { NgModule } from '@angular/core'
+    
+    @NgModule({
+        declarations: [..],
+        imports: [..],
+        providers: [..],
+        bootstrap: [..]
+    })
+    export class AppModule {..}
+
+
+Modules almost never contain code and are almost exclusively used to group other objects
