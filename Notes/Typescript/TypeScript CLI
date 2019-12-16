@@ -1,0 +1,29 @@
+Installation of Typescript (GLOBAL)
+-----------------------------------
+    npm ls typescript -g
+    npm install typescript -g
+    
+Installation of Typescript (LOCAL)
+----------------------------------
+    npm init -y
+    npm install typescript -g
+    
+Initialization of Typescript (for new project)
+----------------------------
+    tsc --init
+    
+Transpilling
+------------
+    tsc.exe is the transpiler
+    turns TypeScript (*.ts) into JavaScript (*.js)
+
+    Multiple options 
+        tsc hi.ts => hi.js (single convert)
+        tsc *.ts => *.js (wildcard convert)
+
+    tsconfig.json (in project node)
+        compilerOptions
+            -outDir: "js"
+        include: ["ts/**.*"]
+
+tsc -w (? not sure what this does)

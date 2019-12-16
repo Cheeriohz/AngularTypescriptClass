@@ -1,0 +1,41 @@
+Installation
+------------
+    (Global Installation)
+    npm install -g @angular/cli
+
+Help
+----
+    ng help [command]
+
+    (example)
+    ng help new
+
+Project Creation
+----------------
+    ng new [name] [options]
+        [options]
+            --directory - directory to create in the project in
+            --routing - causes a routing module to be generated within the project.
+
+    (example)
+    ng new my-first-angular-Project
+
+    More details at https://angular.io/
+
+Object Creation (generate)
+--------------------------
+    ng (g)enerate [blueprint] [name] [option]
+        [blueprint]
+        (cl)ass
+        (c)omponent
+        (g)uard
+        (m)odule
+        (p)ipe
+        (s)ervice
+
+Build and Run Project (serve)
+-----------------------------
+    ng serve [option]
+        [option]
+            -o -opens the browser or tab and monitors the source files refreshing the browser on save
+
