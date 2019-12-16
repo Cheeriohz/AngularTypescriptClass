@@ -1,0 +1,33 @@
+Components are the objects that render data on the page.
+A typical component will contain:
+    imports
+    the @Component decorator
+    a class
+The HTML and CSS can be provided by:
+    pointing to a single file containing html or an array of files containing css.
+    the html or css can be embedded in the file.
+
+Options
+-------
+
+selector: "app-comp",
+template (html):
+    templateUrl: "[html-file]"
+    template: "[hmtl]"
+style (css):
+    styleUrls: ["css-file", "css-file", ...]
+    styles: ["body{color:blue; }", "p{color: red; }", ...]
+
+Reference
+---------
+    import { component, OnInit } from '@angular/core';
+
+    @Component({
+        selector: "app-comp",
+        templateUrl: "./app.component.html",
+        styleUrls: ["./app.component.css"]
+    }) 
+    export class AppComponent implements OnInit {
+        constructor() {}
+        ngOnInit() {}
+    }
