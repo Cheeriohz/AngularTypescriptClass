@@ -1,8 +1,0 @@
-Subcomponents of Angular 
-    Modules - These are like jar files. They hold massive amounts of disparate elements with a shared purpose.
-    Components - These are specific items that control a piece of the UI
-    Services - These are sharable by front end and back end.
-    Pipes - Post ?
-    Directives: Structural and Attribute - These are definable modular elements (high reusability)
-    Observables - Superset of Promises (asynchronous programming)
-    Advanced Topics 
