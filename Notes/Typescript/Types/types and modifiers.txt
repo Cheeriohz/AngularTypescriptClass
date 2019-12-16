@@ -1,0 +1,159 @@
+number
+    All numbers are floating point
+    Any number type such as 
+        Integer (1, 44, 938)
+        decimal (2.2, 3.1415)
+        engineering(2e3 = 2000)
+string
+    surrounded by single quotes or double quotes
+    backtick char (`) can surround strings spanning multiple lines (affords interpolation with ${ a })
+
+boolean
+    true or false
+    truthy or falsey
+        other values for consideration
+            0 // false
+            not 0 // true
+
+object
+    a key/value pair
+    keys are always strings even if they are digits
+    a colon separates the key from the value
+    any type may be a value
+    for reference ...
+    {
+        id: 0,
+        name: 'MAX',
+        active: true
+    }
+
+array
+    a collection of any type
+    declared one of two ways:
+        with type and open/close square brackets: number[], string[]
+        as <Array>type: <Array>number, <Array>string
+    The type is returned as an object
+
+enum
+    enumerations defines a limited set of vvalues
+    Allows mroe self-documenting code 
+    
+    enum Color { Red = 5, Blue, Green }
+    let c: Color = Color.Blue; // 6
+
+any 
+    a type that allows any other type to be used (similar to System.Object in .Net)
+
+    let a: any = 123;
+    let a = "ABC";
+
+void
+    a type that means no value is provided.
+    Used mostly as a return value for functions that do not return any value
+    
+null
+    indicates the absence of a value
+    neither properties nor functions can be called or refernced if the object is null
+    used in foreign keys to indicate a reference doesn't exist
+
+undefined
+    The type of any object before it is assigned.
+
+    let a; // typeof a is undefined
+
+let
+    Is used to define variables using block scoping
+    Should always used
+
+const
+    defines a variable as having an initial value that cannot be changed.
+
+interface
+    defines a structural template
+    reversed is an option property in objects implementing IPrintable
+
+    interface IPrintable {
+        copies: number;
+        reversed?: boolean;
+    }
+    let document: IPrintable = {copies: 1, reversed: false};
+
+class
+    Defines an object that binds the properties and the functions that operate on those properties
+    May have only a single constructor
+
+    class Square {
+        side: number;
+        constructor(side: number) {
+            this.side = side;
+        }
+        area(): number {return this.side * this.side;}
+    }
+
+Access Modifiers
+    public by default
+    private are class only
+
+Getters/Setters
+    Allows functions to be treated as property
+
+    class Customer {
+        private _name: string;
+        get name() {
+            return this._name;
+        }
+        set name(aName: string) {
+            this._name = aName;
+        }
+    }
+    let aName = (new Customer()).name;
+
+Function Parameters
+    May be optional or have default values
+
+    function go(a: number = 1, b?: boolean) {
+        console.log(a);
+        if(typeof b == "undefined")
+            b = "not provided";
+        console.log(b);
+    }
+    go();
+
+this
+    Whenever a property or method of a class is referenced that reference must include the this keyword.
+
+generics
+    Generics are strongly typed objects that are limited to a single type
+
+    class List<number> {
+        arr: number[] = [];
+        add(n: number): void {
+            this.arr.push(n);
+        }
+    }
+
+modules
+    blocks of code executed within a defined scope rather than the global scope.
+    must have exported some of the code objects
+
+    //log.js
+    module.exports = function(msg: string) {
+        console.log(msg);
+    }
+    let log = require("./log.js")
+    log("Hello, world!");
+
+exporting
+    for an object to be used by another object, it must be exported
+    exported objects may be imported by other objects
+    requires the export keyword preceding the class object
+    
+    export class Customer { .. }
+
+importing
+    to use an object defined in one file in another object, the object must be imported
+    class names are comma separated within curly brackets
+    the File name is quoted and must be relative path from the file importiing it. It never includes
+    the ".ts"
+
+    import { classname } from "./aClass"
