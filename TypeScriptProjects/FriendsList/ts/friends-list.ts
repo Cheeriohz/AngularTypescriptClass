@@ -25,7 +25,7 @@ export class Friend {
     };
 
     print(): void {
-        console.log(`${this.name} \t\t ${this.age} \t ${this.email} \t\t ${this.isBFF()}`);
+        console.log(`${this.name} \t | ${this.age} | ${this.email} \t| ${this.isBFF()}`);
     }
     private isBFF(): string {
         if(this.bff){

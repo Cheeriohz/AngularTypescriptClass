@@ -6,6 +6,7 @@ friends.push(new Friend({name: "John", age: 29, email: "Landgrave@gmail.com", bf
 friends.push(new Friend({name: "Greg", age: 28, bff: false}));
 friends.push(new Friend({name: "Nick", age: 30, email: "rebirth@gmail.com", bff: false}));
 friends.push(new Friend({name: "Beatrice", age: 31, email: "wife@gmail.com", bff: true}));
+friends.push(new Friend({name: "Nym", age: 2}));
 
 console.log("Name \t\t Age \t Email \t\t BFF");
 friends.forEach(friend => { 
