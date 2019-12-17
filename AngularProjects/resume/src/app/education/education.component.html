@@ -1,1 +1,7 @@
-<p>education works!</p>
+<h3>Education History</h3>
+<ul>
+    <li *ngFor="let educationItem of educationHistory"  [ngSwitch]="educationItem.displayIdentifier"> 
+            <label *ngSwitchCase="'basic'">{{educationItem.description}}</label>
+            <label *ngSwitchCase="'bold'" class='bold-li'>{{educationItem.description}}</label>
+    </li>
+</ul>
