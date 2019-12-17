@@ -18,6 +18,11 @@ style (css):
     styleUrls: ["css-file", "css-file", ...]
     styles: ["body{color:blue; }", "p{color: red; }", ...]
 
+Selectors
+---------
+    Selectors are identifiers for a component. They are embedded in another component's html
+    as an HTML tag.
+
 Reference
 ---------
     import { component, OnInit } from '@angular/core';
