@@ -1,0 +1,7 @@
+<div>
+    <button class='btn' (click)="decrementCounter()">-</button>
+    <input [(ngModel)]="counter" [disabled]='isDisabled' 
+           [style.color]='isRed' [style.font-weight]=isBold
+           [style.font-style]='isItalic'/>
+    <button class='btn' (click)="incrementCounter()">+</button>
+</div>
