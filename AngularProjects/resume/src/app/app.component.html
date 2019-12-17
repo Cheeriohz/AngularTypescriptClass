@@ -1,32 +1,31 @@
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <span>Angular Web Resume</span>
-    <div class="spacer"></div>
-</div>
 
-<div class="content" role="main">
+<body>
+  <app-menu></app-menu>  
+  <div class="content" role="main">
 
-  <!-- Highlight Card -->
-  <div class="card highlight-card white-card card-small">
+    <!-- Highlight Card -->
+    <div class="card highlight-card white-card card-small">
 
-    <span>{{ title }}</span>
-  </div>
-
-  <!-- Resources -->
-  <div class='card red-card'>
-    <h2>Introduction</h2>
-  </div>
-  <p>{{introductoryText}}</p>
-
-  <app-work-experience></app-work-experience>
-  <app-education></app-education>
-
-  <footer>
-    <div class="card-container">
-      <div class='card highlight-card green-card'>Contact Information</div>
-      <div class='card'><b>Email: </b>{{email}}</div>
-      <div class='card'><b>Address: </b> {{address}}</div>
-      <div class='card'><b>Phone: </b>{{phone}}</div>
+      <span>{{ title }}</span>
     </div>
-  </footer>
-</div>
+
+    <!-- Resources -->
+    <div class='card red-card'>
+      <h2>Introduction</h2>
+    </div>
+    <p>{{introductoryText}}</p>
+
+    <app-work-experience></app-work-experience>
+    <app-education></app-education>
+
+    
+  </div>
+</body>
+<footer>
+  <div class="card-container">
+    <div class='card highlight-card green-card'>Contact Information</div>
+    <div class='card'><b>Email: </b>{{email}}</div>
+    <div class='card'><b>Address: </b> {{address}}</div>
+    <div class='card'><b>Phone: </b>{{phone}}</div>
+  </div>
+</footer>
