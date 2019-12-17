@@ -1,0 +1,14 @@
+One-Way Binding
+---------------
+    The modified propery value is immediately updated on the user interface, but a change in the
+    control does not update the property value.
+
+    (example)
+    <p>{{propertyName}}</p>
+
+Two-Way Binding
+---------------
+    Any changes on the property or control causes a change in the other.
+
+    (example)
+    <input [(ngModel)]='name' type=text/>
