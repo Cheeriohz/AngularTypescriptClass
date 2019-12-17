@@ -59,6 +59,17 @@ class
         life-cycle functions (ngOnInit)
     All class objects are public by default
 
+Implementing an Interface
+-------------------------
+    When implementing an interface, you need to import the interface and implement the functions.
+
+    (example)
+    import { OnInit } from '@angular/core';
+
+    export class AppComponent implements OnInit {
+        ngOnInit() {//put your actual implementation here}
+    }
+
 Reference
 ---------
     import { component, OnInit } from '@angular/core';

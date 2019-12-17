@@ -27,3 +27,6 @@ Every object used in the application must be known to the application module
 
 Angular is a framework for building web applications.
 Applications consist primarily of a heirarchy of components that are grouped into modules.
+
+Bootstrap Styling
+    Easiest way to add to Angular is by adding the link to the src/index.html file

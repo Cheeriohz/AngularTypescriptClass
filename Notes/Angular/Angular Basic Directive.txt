@@ -1,0 +1,94 @@
+*ngIf
+-----
+    Determines whether HTML and all it's child tags are attached.
+    Seemingly the quotes around the expression for evaluation are computed against the component's internal memory.
+    null returns false.
+
+    (example)
+    <div *ngIF='custlist'>..</div>
+
+*ngFor
+------
+    Loops through a collection replicating the HTML tag and all child tags for each item in the collection.
+    Let is required
+
+    (example)
+    <tr *ngFor='let user of users'>
+        <td>Name</td><td>{{user.fname}}</td>
+        <td>City</td><td>{{user.city}}</td>
+    </tr>
+
+[ngSwitch]
+----------
+    Displays one of multiple setes of HTML tags containing ngSwitchCase based on a property value
+    <div [ngSwitch]='switchValue'>
+        <p *ngSwitchCase='1'> Displays 1</p>
+        <p *ngSwitchCase='2'> Displays 2</p>
+        <p *ngSwitchCase='3'> Displays 3</p>
+    </div>
+
+[ngClass]
+--------
+    Set HTML class attribute using data from component
+    
+    (example)
+    <button [ngClass]="clsVals">...</button>
+    
+    *(note) clsVals is a class property such as btn-submit 
+
+[hidden]
+--------
+    Used to add or remove the hidden attribute from HTML based on whether the expression is truthy
+
+    (example)
+    <p [hidden]='isHidden'>...</p>
+
+[disabled]
+----------
+    Used to add or remove the disabled attribute from HTML based on whether the expression is truthy
+
+    (example)
+    <button [attr.disabled]='isDisabled'>...</button>
+
+[src]
+-----
+    Used to add or remove the value from the src attribute from HTML
+
+    (example)
+    <img [src]='imageUrl'/>
+
+[class.x]
+---------
+    Used to add or remove a particular value from the class attribute within an HTML statements
+
+    (example)
+    <div [class.red]='isRed'>...</div>
+
+[style.x]
+---------
+    Used to add or remove a particular value from the style attribute within an HTML statements
+
+    (example)
+    <p [style.color]='color'>...</p>
+
+
+Events
+------
+    Defines a function to be executed when an event on an HTML tag fires.
+    Parenthesis are required on event and function
+    Can pass data to the function
+
+    (example)
+    <button (click)='log()'>...</button>
+
+Component Communication
+-----------------------
+    Parent components can pass data to child components through the psuedo-html tags
+    The aMenu property in the child must be decorated with @Input()
+
+    (example)
+    <menu-item *ngFor='let menu of menus' [aMenu]='menu'></menu-item>
+    ---
+    export class MenuItemComponent
+    @Input() aMenu: Menu
+
