@@ -1,0 +1,112 @@
+Overview
+--------
+    Services can be shared across components
+    Requirements:
+        -include the providedIn: 'root' in decorator or
+        -be imported and exposed in the providers decorator key of app module
+    They are injected into components through the component's constructor parameter list
+    Common Uses
+        Applications options
+        Storing user login information
+        AJAX methods
+
+Injectable
+----------
+    Services use the @Injectable decorator.
+    Means the service itself can use other services that will be injected into them (e.g. created
+    service will have the HttpClient service injected into it)
+
+Using a service
+---------------
+    To use a service in a component, it must be injected into the component via the constructor
+    Add private, protected, or public to constructor parameter creating a local property in the class
+
+Services for data access
+------------------------
+    When a service is used to access data from a server, some rules to follow include:
+        One servive per server controller: UserService for UsersController
+        One service function per server controller method:
+            UserService.list() for UserController.GetAllUsers()
+        Services are singletons. There is only a single existing at any time.
+
+Asynchronous Communication
+--------------------------
+    Asynchronous communication means the request and response will be delayed and may never complete
+    Using subscribe(..) handles the response whenever it completes.
+    The rest of the code continues running when the asynchronous call is running.
+
+HttpClient
+----------
+    Service class within HttpClientModule providing async AJAX calls.
+     import 'HttpClientModule' from '@angular/common/http' in AppModule
+    Requires import of 'Observable' from 'rxJS' (Reactive JS)
+    Injected into component via constructor
+    Provides get, post, put, delete methods.
+
+Observable
+----------
+    Observable are constructs to handle async calls.
+    Provided by importing from rxJS (Reactive JS)
+    Observable provides subscribe method to handle asynchronous data return
+
+    (example)
+    this.http.get(url)
+        .subscribe(
+            res => { console.log(res) },
+            err => { console.error(err) }
+        );
+
+Subscribe
+---------
+    Called only where async call returns
+    Lambda variable exists ONLY within the subscribe function
+    subscribe takes 1 or 2 parameters
+        1st parameter is a function which is called if successful
+        2nd parameter is a function which is called if unsuccessful
+
+(examples)
+Example Services
+----------------
+    import { Injectable } from '@angular/core';
+
+    @Injectable({'providedIn: root'})
+
+    export class SystemService {
+        loggedInUser: User = null;
+    }
+
+Example Service Use
+-------------------
+    import { Component } from '@angular/core';
+    import { SystemService } from './service/system.service';
+
+    @Component()
+    export class UserListComponent {
+        constructor(private SysSvc: SystemService) {}
+    }
+
+Example Ajax Service
+--------------------
+
+    import { Injectable } from '@angular/core';
+    import { HttpClient } from '@angular/common/http';
+    import { Observable } from 'rxjs';
+
+    // assuming a user class in user.ts
+    import { User } from './user';
+
+    const url = 'http://localhost/12345/api/users/';
+
+    @Injectable()
+    export class UserService {
+        constructor(private http: HttpClient ) {} 
+        )
+        // Service Functions
+        List(): Observable<User[]> {
+            return this.http.get(`${url}`) as Observable<User[]>;
+        }
+        Get(id): Observable<User> {
+            return this.http.get(`${url}/${id}`) As Observable<User>;
+        }
+    }
+
