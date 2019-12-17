@@ -3,7 +3,21 @@
     <h3>{{givenName}}</h3>
 </div>
 
-<div *ngIf="myModel">
+<div class='container' *ngIf='myModel'>
     <label>Object Initialized</label>
     <label >{{myModel.toJson}}</label>
+    
+</div>
+<br>
+
+<ul class='classRoom'>
+    <li *ngFor="let student of classRoom"
+        [class.selected]='student === selectedStudent'
+        (click) ='onSelect(student)'>
+        <span class='badge'>{{student.id}}</span> {{student.name}}
+    </li>
+</ul>
+
+<div *ngIf='selectedStudent'>
+    <h2>{{selectedStudent.name}} has been choosen</h2>
 </div>
