@@ -22,6 +22,42 @@ Selectors
 ---------
     Selectors are identifiers for a component. They are embedded in another component's html
     as an HTML tag.
+    Must always be used with both an opening and closing tag.
+    Selected name should always include a dash.
+    Template / TemplateURL is the only required decorator key
+    Components that are only used in SPA routes may exclude a selector
+    
+    (example)
+    <div>
+        <span> Start of component</span>
+        <app-comp></app-comp>
+    </div>
+
+Template
+--------
+    In Angular, template = HTML
+    The HTML can be specified with
+        templateURL: './app.component.html'  (THIS MUST BE RELATIVE ADDRESSING)
+        Template: '<div>...</div>
+    Template is typically used for only very small html
+
+Styles
+------
+    Styles in components are localized to only the component they are attached to
+    Can be specified with
+        styleUrls:['./app.component1.css', './app.component2.css', ...]
+        styles: ['p{color:red, font-size:2em}']
+
+class
+-----
+    Every object has a class which must be exported
+    All typscript code goes in the class
+    Classes cacn have
+        properties (fields)
+        methods(functions)
+        a constructor(but only one!)
+        life-cycle functions (ngOnInit)
+    All class objects are public by default
 
 Reference
 ---------
