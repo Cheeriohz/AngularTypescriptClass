@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./work-experience.component.css']
 })
 export class WorkExperienceComponent implements OnInit {
-
+  workHistory: string[] = [];
   constructor() { }
 
   ngOnInit() {
+    this.workHistory.push('ControlTouch Systems');
+    this.workHistory.push('Intelligrated');
+    this.workHistory.push('HoneyWell');
+    this.workHistory.push('Cincinnati Insurance Companies');
   }
 
 }

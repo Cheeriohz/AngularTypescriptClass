@@ -1,1 +1,9 @@
-<p>work-experience works!</p>
+
+<div class='card-container'>
+    <div class='card highlight-card purple-card'>
+        <h3>Work Experience</h3> 
+    </div>
+    <div *ngFor="let workitem of workHistory">
+            <div class='card'>{{workitem}}</div>
+    </div>
+</div>
