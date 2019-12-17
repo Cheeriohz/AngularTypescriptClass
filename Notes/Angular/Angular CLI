@@ -1,9 +1,13 @@
 *note* -- is for verbose, - is for single letter and short variants
 
-Installation
+Angular Installation
 ------------
     (Global Installation)
     npm install -g @angular/cli
+
+General Installation
+--------------------
+    npm install (this is used to install missing node dependencies for a project into your local machine)
 
 Help
 ----
