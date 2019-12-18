@@ -1,0 +1,27 @@
+Overview
+--------
+    Pipes are classes that are used for things like sorting, filtering, and formatting data.
+    They are typically used on the template and invoked by a vertical bar
+    Pipes must be imported and included in the declarations key of the module
+    Pipe name is in the decorator
+    They take data in and return data
+
+    (examples)
+    <ul>
+        <li *ngFor="let item of items | sort: 'columnname'">
+    </ul>
+
+    <p>{{ bankBalance | currency }}</p>
+    // renders $ $123.45
+
+(Example)
+
+    import { Pipe, PipeTransform } from '@angular/core';
+
+    @Pipe({ name: 'bool' })
+
+    export class BoolPipe implements PipeTransform {
+        transform(val: boolean): string {
+            return(val) ? 'Yes' : 'No';
+        }
+    }
