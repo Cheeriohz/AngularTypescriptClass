@@ -42,6 +42,8 @@ HttpClient
     Requires import of 'Observable' from 'rxJS' (Reactive JS)
     Injected into component via constructor
     Provides get, post, put, delete methods.
+    *Note* HttpClient needs to be imported into the component, not HttpClientModule
+    Do *NOT* use the deprecated '@angular/http' 
 
 Observable
 ----------
@@ -110,3 +112,10 @@ Example Ajax Service
         }
     }
 
+Example Subscribe
+-----------------
+    svc.get("http://www.maxtrain.common")
+        .subscribe(
+            res => { console.log(res); },
+            err => { console.error(err); }
+        );
