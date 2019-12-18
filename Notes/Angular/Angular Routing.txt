@@ -6,6 +6,7 @@ Overview
         Can exist in multiple components, but should be visible in only one at a time.
     Requires a module to define the routes and the components associated with each route
     Order of routes is significant
+    For debugging, you can optionally include an additional parameter in your module imports to ask how Angular determined a route
 
 routerLink
 ----------

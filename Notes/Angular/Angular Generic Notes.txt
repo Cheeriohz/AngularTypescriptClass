@@ -1,14 +1,15 @@
-Subcomponents of Angular 
+Subcomponents of Angular
+------------------------
     Modules - These are like jar files. They hold massive amounts of disparate elements with a shared purpose.
     Components - These are specific items that control a piece of the UI
     Services - These are sharable by front end and back end.
-    Pipes - Post ?
+    Routing - Used for injecting HTML / redirecting to a new page.
+    Pipes - Used for taking an input and returning an output (sorting, filtering, formatting, etc)
     Directives: Structural and Attribute - These are definable modular elements (high reusability)
     Observables - Superset of Promises (asynchronous programming)
-    Advanced Topics 
-
 
 Angular 1x vs 2x
+----------------
     There were issues with 1x with scalability. Therefore google decided to get ahead of future
     issues in size creep by branching out into and entirely new framework.  There was no easy 
     and quick way to transition from 1x to 2x. 
@@ -21,12 +22,24 @@ Angular 1x vs 2x
     a  root component and all other components branching from the root or from other components.
 
 Module
+------
     An angular application is defined as a Module
     A module is a collection of other modules components, pipes, and services
-Every object used in the application must be known to the application module
+    Every object used in the application must be known to the application module
 
-Angular is a framework for building web applications.
-Applications consist primarily of a heirarchy of components that are grouped into modules.
+General
+-------
+    Angular is a framework for building web applications.
+    Applications consist primarily of a heirarchy of components that are grouped into modules.
 
-Bootstrap Styling
-    Easiest way to add to Angular is by adding the link to the src/index.html file
+Symbolic Paths
+--------------
+    You can shorten your import paths by adding some options to the tsconfig.json (project root)
+    These go in the compilerOptions key
+
+    (example)
+    "baseUrl": "src",
+    "paths": {
+        "@models/*": ["app/models/*"],
+        "@svc/*": ["app/services/*"]
+    }
