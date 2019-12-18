@@ -45,3 +45,16 @@ Build and Run Project (serve)
         [option]
             -o -opens the browser or tab and monitors the source files refreshing the browser on save
 
+    start ng serve -o (run async)
+
+Bootstrap (technically NPM)
+---------------------------
+npm install --save bootstrap
+
+    afterwards, inside angular.json (inside the project's root folder), 
+    find styles and add the bootstrap css file like this: (note, there is a test and build style)
+
+    "styles": [
+        "styles.css",
+        "./node_modules/bootstrap/dist/css/bootstrap.css"
+    ],
