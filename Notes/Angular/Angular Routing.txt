@@ -1,0 +1,75 @@
+Overview
+--------
+    Routing is the process where the URL is used as data for displaying the appropriate component
+    Components are injected into HTML containing the special psuedo-HTML tags <router-outlet></router-outlet>
+        In SPA, components are rendered here.
+        Can exist in multiple components, but should be visible in only one at a time.
+    Requires a module to define the routes and the components associated with each route
+    Order of routes is significant
+
+routerLink
+----------
+    A special Angular attribute for <a> tags to programmatically link to a different component by route.
+    Used instead of href (href can be used but will refresh the application [postback?])
+
+    (example)
+    <a routerLink='/about'>Go To About</a>
+
+routerLinkActive
+----------------
+    Attribute identifying a CSS class to apply when the link has been selected
+
+    (example)
+    <a routerLink='/about' routerLinkActive='font-color-yellow'>...</a>
+
+Route
+-----
+    Each route defines which component to load based on the info in the address line of the browser
+    path: defines the route (without leading slash)
+    component: the class name of the component to load.
+
+    (example)
+    { path: 'app', component: AppComponent }
+
+Route path at startup
+---------------------
+    There is a special path used to handle the application start-up when no specific route information is provided
+    path: empty string (no route)
+    redirectTo: link to normal URL
+    pathMatch: look at the entire path
+    Must be first path defined.
+
+    (example)
+    { path: '', redirectTo: '/home', pathMatch: 'full'},
+
+Catch-all route path
+--------------------
+    There is a special path used to handle routes not mapped
+    path: double asterisks (**)
+    component: any imported component
+    Must be last path defined.
+
+    (example)
+    { path: '**', component: AppComponent }
+
+
+(Examples)
+
+Example Router Module
+---------------------
+    import { RouterModule, Routes } from '@angular/router';
+    import { HomeComponent } from './home.component';
+    import { GetComponent } from './get.component';
+
+    const routes; Routes[] [
+        { path: '', redirectTo: '/home', pathMatch: 'full'},
+        { path: 'home', component: HomeComponent },
+        { path: 'get/:id', component: HomeComponent },
+        { path: '**', component: HomeComponent }
+    ];
+
+    @NgModule({
+        imports: [ RouterModule.forRoot(routes) ],
+        exports: [ RouterModule ]
+    })
+    export class AppRouterModule {}
