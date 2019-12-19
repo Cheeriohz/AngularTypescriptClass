@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of, observable } from 'rxjs';
-import { EmployeeModel} from './employee-model'
-import { _values } from 'lodash'
+import { HttpClient, HttpParams, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { EmployeeModel } from './employee-model.class';
 
 const baseAPIUrl: string = `http://www.MaxTrain.com`;
 
+
+// Service uses ajax calls to interface with the azure api.
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeServiceService {
+export class EmployeeAjaxService {
   
   constructor(private ajaxClient: HttpClient) { }
 
@@ -17,24 +18,43 @@ export class EmployeeServiceService {
     return `${baseAPIUrl}/${path}`;
   }
 
-  getAsync(): Observable<EmployeeModel> {
-    /*return of(this.ajaxClient.request('Get', 
-                                       this.url('api/employees'), 
-                                       { responseType:'json' }
-                                     )
-             ) 
-    as Observable<EmployeeModel>*/
-    return new Observable<EmployeeModel>();
+  getAllEmployees(): Observable<EmployeeModel[]> {
+    let headers = new HttpHeaders().append('Content-Type', 'application/json');
+
+    return this.ajaxClient
+        .get<EmployeeModel[]>( this.url('api/employees'), { headers: headers});
   }
 
-  private get(): EmployeeModel {
-    this.ajaxClient
-        .get<EmployeeModel[]>( this.url('api/employees'))
-        .map(employee => _values(employee)
+  getEmployee( employeeId: number ): Observable<EmployeeModel> {
+    let headers = new HttpHeaders().append('Content-Type', 'application/json');
+    
+    let params: HttpParams = new HttpParams().set('id', employeeId.toString());
+    
+    return this.ajaxClient
+        .get<EmployeeModel>( this.url('api/employees'), { headers: headers, params: params });
+  }
+
+  insertEmployee( employee: EmployeeModel ): Observable<HttpResponse<EmployeeModel>> {
+    let headers = new HttpHeaders().append('Content-Type', 'application/json');
+
+    return this.ajaxClient
+        .post<EmployeeModel>( this.url('api/employees'), employee, { headers: headers, observe: 'response'}) 
+  }
+
+  updateEmployee( employee: EmployeeModel ): Observable<EmployeeModel> {
+    let headers = new HttpHeaders().append('Content-Type', 'application/json');
+
+    return this.ajaxClient
+        .put<EmployeeModel>( this.url(`api/employees/${employee.id}`), employee, { headers: headers, observe: 'body'} )
+  }
+
+  deleteEmployee( employeeId: number ): Observable<any> {
+    let headers = new HttpHeaders().append('Content-Type', 'application/json');
+
+    return this.ajaxClient.delete( this.url(`api/employees/${employeeId}`), { headers: headers })
   }
 
 }
-
 
 /*
  * GET /api/employees - returns all employees
