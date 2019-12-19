@@ -8,6 +8,9 @@ import { MenuModel } from './menu-item/menu-model.class'
 })
 export class MenuComponent implements OnInit {
   @Input() menus: MenuModel[];
+  //Default ulStyle to dark.
+  @Input() ulStyle: string = 'navbar navbar-dark';
+  @Input() liStyle: string = 'bg-dark nav-link'
   constructor() { }
 
   ngOnInit() {

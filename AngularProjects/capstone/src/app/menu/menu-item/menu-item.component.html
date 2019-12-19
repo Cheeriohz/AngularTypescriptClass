@@ -1,1 +1,1 @@
-<li *ngIf="model" class="navbar-nav nav-item boxy"><a [routerLink]='model.route' routerLinkActive="router-link-active" class='bg-dark nav-link' >{{model.displayName}}</a></li>
+<li *ngIf="model" class="navbar-nav nav-item boxy"><a [routerLink]='model.route' routerLinkActive="router-link-active" [ngClass]='liStyle' >{{model.displayName}}</a></li>
