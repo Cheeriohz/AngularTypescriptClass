@@ -4,9 +4,10 @@ import { EmployeeListComponent } from '@employee/employee-list/employee-list.com
 import { EmployeeContainerComponent } from '@employee/employee-container/employee-container.component';
 
 const routes: Routes = [ 
+  
+  { path: 'employeeContainer', component: EmployeeContainerComponent},
+  { path: 'employee-list',    component: EmployeeListComponent }, //, outlet: 'employee'
   { path: '', redirectTo: '/employees/employeeContainer', pathMatch: 'full' }, 
-  { path: 'employees/employeeContainer', component: EmployeeContainerComponent},
-  { path: 'employees/employee-list',    component: EmployeeListComponent, outlet: 'employee' },
   { path: '**',    component: EmployeeContainerComponent }
 ];
 

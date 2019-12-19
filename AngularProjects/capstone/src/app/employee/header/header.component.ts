@@ -8,7 +8,7 @@ import { MenuModel } from '@menu/menu.module';
 })
 export class HeaderComponent implements OnInit {
   menus: MenuModel[] = [
-    { displayName: 'Employee-List', tooltip: 'List All Employees', route: 'employees/employee-list'}
+    { displayName: 'Employee-List', tooltip: 'List All Employees', route: '/employees/employee-list'}
     //TODO: Need to add additional entries
   ];
   menuUlStyle: string = 'navbar navbar-light';
