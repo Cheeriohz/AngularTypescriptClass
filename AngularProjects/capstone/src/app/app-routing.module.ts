@@ -10,12 +10,14 @@ const routes: Routes = [
   { path: 'home',     component: HomeComponent },
   { path: 'about',    component: AboutComponent },
   { path: 'help/:id', component: HelpComponent },
-  { path: 'employees', component: EmployeeContainerComponent },
+  { path: 'employees',
+    loadChildren: () => import('@employee/employee.module').then(mod => mod.EmployeeModule)
+  },
   { path: '**',       component: HelpComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

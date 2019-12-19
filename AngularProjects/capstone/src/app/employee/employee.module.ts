@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router'
 import { MenuModule } from '@menu/menu.module';
 
+import { EmployeeRoutingModule } from '@employee/employee-routing/employee-routing.module'
+
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { HeaderComponent } from './header/header.component';
 import { TableComponent } from './employee-list/table/table.component';
@@ -15,7 +17,8 @@ import { EmployeeContainerComponent } from './employee-container/employee-contai
     CommonModule,
     FormsModule,
     RouterModule,
-    MenuModule
+    MenuModule,
+    EmployeeRoutingModule
   ],
   exports: [ EmployeeContainerComponent ]
   
