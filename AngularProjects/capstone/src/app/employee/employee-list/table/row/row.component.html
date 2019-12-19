@@ -4,4 +4,4 @@
 <td>{{this.fullAddress(employee)}}</td>
 <td>{{employee.salary | currency}}</td>
 <td>{{employee.ptoDays}}</td>
-<td><span><a>[Detail]</a><a>[Edit]</a> </span></td>
+<td><span><a (click)='routeToDetail()'> [Detail]</a><a (click)='routeToEdit()'>[Edit]</a> </span></td>

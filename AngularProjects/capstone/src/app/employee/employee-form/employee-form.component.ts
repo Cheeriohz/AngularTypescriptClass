@@ -9,6 +9,7 @@ import { EmployeeModel } from '@employee/employee-model.class';
 export class EmployeeFormComponent implements OnInit {
   @Input() employee: EmployeeModel
   @Input() lockControls: boolean
+  @Input() submitOption: string;
   constructor() { }
 
   ngOnInit() {

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EmployeeModel } from '@employee/employee-model.class';
+import { Router } from '@angular/router';
 
 @Component({
   selector: '[app-row]',
@@ -8,7 +9,7 @@ import { EmployeeModel } from '@employee/employee-model.class';
 })
 export class RowComponent implements OnInit {
   @Input() employee: EmployeeModel
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -16,5 +17,13 @@ export class RowComponent implements OnInit {
   fullAddress(employee: EmployeeModel): string {
     return `${employee.address}, ${employee.city}, ${employee.stateCode} ${employee.zip}`;
 }
+
+  routeToDetail() {
+    this.router.navigate(['/employees/employee-detail', { employe: this.employee }]);
+  }
+
+  routeToEdit() {
+    this.router.navigate(['/employees/employee-edit', { employe: this.employee }]);
+  }
 
 }

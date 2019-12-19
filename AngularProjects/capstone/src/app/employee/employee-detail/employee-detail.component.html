@@ -1,1 +1,6 @@
-<p>employee-detail works!</p>
+<form ngForm 
+      app-employee-form [employee]='employee' 
+      [lockControls]=false 
+      (ngSubmit)='createNewEmployee()'
+      [submitOption]='submitOption'>
+</form>

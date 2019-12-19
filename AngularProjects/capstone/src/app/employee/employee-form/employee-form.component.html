@@ -74,7 +74,13 @@
     </div>
 </div>
 <div class="row">
-    <div class="col">
+    <div class="col" *ngIf="submitOption=='new' || submitOption=='edit'">
         <button type="submit" class="btn btn-primary">Save</button>            
-    </div>
+      </div>
+      <div class="col" *ngIf="submitOption=='detail'">
+        <button type="submit" class="btn">Edit</button>            
+      </div>
+      <div class="col" *ngIf="submitOption=='detail'">
+        <button type="submit" class="btn btn-warning">Delete</button>            
+      </div>
 </div>

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { EmployeeModel } from '@employee/employee-model.class';
-import { ngForm }  from '@angular/forms';
+import { NgForm }  from '@angular/forms';
 import { EmployeeAjaxService } from '@employee/employee-ajax-service.service';
 
 @Component({
@@ -10,13 +10,14 @@ import { EmployeeAjaxService } from '@employee/employee-ajax-service.service';
 })
 export class NewEmployeeComponent implements OnInit {
   employee: EmployeeModel;
+  submitOption:string = 'new';
   constructor(private employeeService: EmployeeAjaxService) { }
 
   ngOnInit() {
     this.employee = new EmployeeModel();
   }
 
-  createNewEmployee(form: ngForm) {
+  createNewEmployee(form: NgForm) {
     console.log(this.employee);
     this.employeeService.insertEmployee(this.employee)
       .subscribe(
