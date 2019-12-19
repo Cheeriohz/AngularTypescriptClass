@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuItemComponent } from './menu-item/menu-item.component'
+import { Component, OnInit, Input } from '@angular/core';
 import { MenuModel } from './menu-item/menu-model.class'
 
 @Component({
@@ -8,14 +7,10 @@ import { MenuModel } from './menu-item/menu-model.class'
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  menus: MenuModel[] = [];
+  @Input() menus: MenuModel[];
   constructor() { }
 
   ngOnInit() {
-    this.menus.push( new MenuModel('Home', 'Homepage', '/home'));
-    this.menus.push( new MenuModel('Employee', 'Employee Information', '/employee'));
-    this.menus.push( new MenuModel('About', 'About Us', '/about'));
-    this.menus.push( new MenuModel('Help', "I'm so lost", '/help'));
   }
 
 }
