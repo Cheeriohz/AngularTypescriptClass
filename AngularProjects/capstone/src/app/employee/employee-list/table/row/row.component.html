@@ -1,9 +1,7 @@
-<tr>
-    <th scope="row">{{employee.id}}</th>
-    <td>{{employee.name}}</td>
-    <td>{{employee.username}}</td>
-    <td>{{this.fullAddress(employee)}}</td>
-    <td>{{employee.salary}}</td>
-    <td>{{employee.ptoDays}}</td>
-    <td>[Detail] [Edit]</td>
-  </tr>
+<th scope="row">{{employee.id}}</th>
+<td>{{employee.name}}</td>
+<td>{{employee.username}}</td>
+<td>{{this.fullAddress(employee)}}</td>
+<td>{{employee.salary | currency}}</td>
+<td>{{employee.ptoDays}}</td>
+<td><span><a>[Detail]</a><a>[Edit]</a> </span></td>

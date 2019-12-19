@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { EmployeeModel } from '@employee/employee-model.class';
 
 @Component({
-  selector: 'app-row',
+  selector: '[app-row]',
   templateUrl: './row.component.html',
   styleUrls: ['./row.component.css']
 })

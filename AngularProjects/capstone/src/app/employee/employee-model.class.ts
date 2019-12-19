@@ -10,6 +10,11 @@ export class EmployeeModel {
     ptoDays: number;
     password:string;
     username:string;
+    constructor() {
+        this.isActive = true;
+        this.salary = 50000;
+        this.ptoDays = 15;
+    }
 }
 
 /* 

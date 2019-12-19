@@ -1,0 +1,80 @@
+<div class='card'>
+    <div class="row">
+        <div class="col">
+        <label>Id:</label>
+        </div>
+        <div class="col">
+        <input disabled='true' [(ngModel)]="employee.id" type="text" class="form-control" placeholder="Id TBD">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Username/Password:</label>
+        </div>
+        <div class="col">
+            <input [disabled]='lockControls' [(ngModel)]="employee.username" type="text" class="form-control" placeholder="Username">
+        </div>
+        <div class="col">
+            <input [disabled]='lockControls' [(ngModel)]="employee.password" type="text" class="form-control" placeholder="Password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Name:</label>
+        </div>
+        <div class="col">
+            <input [disabled]='lockControls' [(ngModel)]="employee.name" type="text" class="form-control" placeholder="Name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Address:</label>
+        </div>
+        <div class="col">
+            <input [disabled]='lockControls' [(ngModel)]="employee.address" type="text" class="form-control" placeholder="Address">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>City/St/Zip:</label>
+        </div>
+        <div class="col">
+            <input [disabled]='lockControls' [(ngModel)]="employee.city" type="text" class="form-control" placeholder="City">
+        </div>
+        <div class="col">
+            <input [disabled]='lockControls' [(ngModel)]="employee.stateCode" type="text" class="form-control" placeholder="St">
+        </div>
+        <div class="col">
+            <input [disabled]='lockControls' [(ngModel)]="employee.zip" type="text" class="form-control" placeholder="Zip">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Active:</label>
+        </div>
+        <div class="col">
+            <input [disabled]='lockControls' [(ngModel)]="employee.isActive" type="checkbox" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Salary:</label>
+        </div>
+        <div class="col">
+            <input [disabled]='lockControls' [(ngModel)]="employee.salary" type="text" class="form-control" placeholder="Salary">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>PTO Days:</label>
+        </div>
+        <div class="col">
+            <input [disabled]='lockControls' [(ngModel)]="employee.ptoDays" type="text" class="form-control" placeholder="PTO Days">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <button type="submit" class="btn btn-primary">Save</button>            
+    </div>
+</div>

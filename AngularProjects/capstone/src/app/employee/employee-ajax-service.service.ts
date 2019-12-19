@@ -34,11 +34,11 @@ export class EmployeeAjaxService {
         .get<EmployeeModel>( this.url('api/employees'), { headers: headers, params: params });
   }
 
-  insertEmployee( employee: EmployeeModel ): Observable<HttpResponse<EmployeeModel>> {
+  insertEmployee( employee: EmployeeModel ): Observable<any> {
     let headers = new HttpHeaders().append('Content-Type', 'application/json');
 
     return this.ajaxClient
-        .post<EmployeeModel>( this.url('api/employees'), employee, { headers: headers, observe: 'response'}) 
+        .post<any>( this.url('api/employees'), employee); 
   }
 
   updateEmployee( employee: EmployeeModel ): Observable<EmployeeModel> {

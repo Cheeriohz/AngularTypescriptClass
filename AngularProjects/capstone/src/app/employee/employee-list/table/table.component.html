@@ -3,12 +3,14 @@
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
+        <th scope="col">UserName</th>
         <th scope="col">Address</th>
         <th scope="col">Salary</th>
         <th scope="col">PTO Days</th>
+        <th scope="col">Action:</th>
       </tr>
     </thead>
     <tbody>
-        <app-row *ngFor="let employee of employees" [employee]='employee'></app-row>
+        <tr app-row *ngFor="let employee of employees" [employee]='employee'></tr>
     </tbody>
   </table>
