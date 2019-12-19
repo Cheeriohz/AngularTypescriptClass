@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { EmployeeAjaxService } from './employee-service.service';
+import { EmployeeAjaxService } from './employee-ajax-service.service';
 
 describe('EmployeeServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
