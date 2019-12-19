@@ -3,7 +3,7 @@ import { HttpClient, HttpParams, HttpHeaders, HttpResponse } from '@angular/comm
 import { Observable, of } from 'rxjs';
 import { EmployeeModel } from './employee-model.class';
 
-const baseAPIUrl: string = `http://www.MaxTrain.com`;
+const baseAPIUrl: string = `https://ngjsonservice20191211114126.azurewebsites.net`;
 
 
 // Service uses ajax calls to interface with the azure api.

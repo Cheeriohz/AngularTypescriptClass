@@ -3,15 +3,13 @@ export class EmployeeModel {
     name: string;
     address: string;
     city: string;
-    state: string;
+    stateCode: string;
     zip: string;
     isActive: boolean;
     salary: number;
     ptoDays: number;
-
-    get fullAddress(): string {
-        return `${this.address}, ${this.city}, ${this.state} ${this.zip}`;
-    }
+    password:string;
+    username:string;
 }
 
 /* 
