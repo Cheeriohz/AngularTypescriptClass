@@ -9,7 +9,7 @@ import { MenuModel } from '@menu/menu.module';
 export class AppComponent {
   menus: MenuModel[] = [
     { displayName: 'Home', tooltip: 'Homepage', route: '/home'},
-    { displayName:'Employee', tooltip: 'Employee Information', route: '/employee'},
+    { displayName:'Employee', tooltip: 'Employee Information', route: '/employees'},
     { displayName:'About', tooltip: 'About Us', route: '/about'},
     { displayName:'Help', tooltip: "I'm so lost", route: '/help'}
   ];

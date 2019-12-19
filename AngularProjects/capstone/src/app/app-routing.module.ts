@@ -3,17 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HelpComponent } from './help/help.component';
-import { EmployeeContainerComponent } from '@employee/employee-container/employee-container.component'
-import { EmployeeListComponent } from '@employee/employee-list/employee-list.component'
-
+import { EmployeeContainerComponent } from '@employee/employee-container/employee-container.component';
 
 const routes: Routes = [
   { path: '',         redirectTo: '/home', pathMatch: 'full' },
   { path: 'home',     component: HomeComponent },
   { path: 'about',    component: AboutComponent },
   { path: 'help/:id', component: HelpComponent },
-  { path: 'employee/employee-list',    component: EmployeeListComponent },
-  { path: 'employee/employees',    component: EmployeeContainerComponent },
+  { path: 'employees', component: EmployeeContainerComponent },
   { path: '**',       component: HelpComponent }
 ];
 

@@ -9,9 +9,6 @@ import { HeaderComponent } from './header/header.component';
 import { TableComponent } from './employee-list/table/table.component';
 import { EmployeeContainerComponent } from './employee-container/employee-container.component';
 
-
-
-
 @NgModule({
   declarations: [EmployeeListComponent, HeaderComponent, TableComponent, EmployeeContainerComponent],
   imports: [
@@ -19,6 +16,8 @@ import { EmployeeContainerComponent } from './employee-container/employee-contai
     FormsModule,
     RouterModule,
     MenuModule
-  ]
+  ],
+  exports: [ EmployeeContainerComponent ]
+  
 })
 export class EmployeeModule { }
